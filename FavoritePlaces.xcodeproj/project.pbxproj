@@ -13,6 +13,9 @@
 		C3938E8B2837E30A00D20D97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3938E892837E30A00D20D97 /* LaunchScreen.storyboard */; };
 		C3938E972837E9D400D20D97 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3938E962837E9D400D20D97 /* SnapKit.xcframework */; };
 		C3938E982837E9D400D20D97 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3938E962837E9D400D20D97 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C3938E9C2837EF2200D20D97 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938E9B2837EF2200D20D97 /* ModuleBuilder.swift */; };
+		C3938EB82838171B00D20D97 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EB72838171B00D20D97 /* Result.swift */; };
+		C3938EBA2838DB0400D20D97 /* UniqueIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EB92838DB0400D20D97 /* UniqueIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +40,9 @@
 		C3938E8A2837E30A00D20D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3938E8C2837E30A00D20D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3938E962837E9D400D20D97 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
+		C3938E9B2837EF2200D20D97 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		C3938EB72838171B00D20D97 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		C3938EB92838DB0400D20D97 /* UniqueIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 		C3938E922837E4D000D20D97 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C3938E9A2837EF1600D20D97 /* Common */,
 				C3938E7E2837E30800D20D97 /* AppDelegate.swift */,
 				C3938E822837E30800D20D97 /* ViewController.swift */,
 			);
@@ -102,6 +109,16 @@
 				C3938E962837E9D400D20D97 /* SnapKit.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3938E9A2837EF1600D20D97 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C3938E9B2837EF2200D20D97 /* ModuleBuilder.swift */,
+				C3938EB92838DB0400D20D97 /* UniqueIdentifiable.swift */,
+				C3938EB72838171B00D20D97 /* Result.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +193,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3938E832837E30800D20D97 /* ViewController.swift in Sources */,
+				C3938EB82838171B00D20D97 /* Result.swift in Sources */,
+				C3938EBA2838DB0400D20D97 /* UniqueIdentifiable.swift in Sources */,
 				C3938E7F2837E30800D20D97 /* AppDelegate.swift in Sources */,
+				C3938E9C2837EF2200D20D97 /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
