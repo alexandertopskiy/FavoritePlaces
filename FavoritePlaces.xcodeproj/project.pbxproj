@@ -9,16 +9,25 @@
 /* Begin PBXBuildFile section */
 		C3938E7F2837E30800D20D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938E7E2837E30800D20D97 /* AppDelegate.swift */; };
 		C3938E832837E30800D20D97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938E822837E30800D20D97 /* ViewController.swift */; };
+		C3938E832837E30800D20D97 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938E822837E30800D20D97 /* LocationsViewController.swift */; };
 		C3938E882837E30A00D20D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3938E872837E30A00D20D97 /* Assets.xcassets */; };
 		C3938E8B2837E30A00D20D97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3938E892837E30A00D20D97 /* LaunchScreen.storyboard */; };
 		C3938E972837E9D400D20D97 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3938E962837E9D400D20D97 /* SnapKit.xcframework */; };
 		C3938E982837E9D400D20D97 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3938E962837E9D400D20D97 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3938E9C2837EF2200D20D97 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938E9B2837EF2200D20D97 /* ModuleBuilder.swift */; };
+		C3938EA12837F54A00D20D97 /* LocationsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EA02837F54A00D20D97 /* LocationsBuilder.swift */; };
+		C3938EA72837F63500D20D97 /* LocationsDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EA62837F63500D20D97 /* LocationsDataFlow.swift */; };
+		C3938EAB2837F66200D20D97 /* LocationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EAA2837F66200D20D97 /* LocationsInteractor.swift */; };
+		C3938EAF2837F68A00D20D97 /* LocationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EAE2837F68A00D20D97 /* LocationsPresenter.swift */; };
 		C3938EB42838168B00D20D97 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EB32838168B00D20D97 /* LocationModel.swift */; };
 		C3938EB62838169200D20D97 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EB52838169200D20D97 /* LocationViewModel.swift */; };
 		C3938EB82838171B00D20D97 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EB72838171B00D20D97 /* Result.swift */; };
 		C3938EBA2838DB0400D20D97 /* UniqueIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EB92838DB0400D20D97 /* UniqueIdentifiable.swift */; };
+		C3938EBD2839127600D20D97 /* LocationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EBC2839127600D20D97 /* LocationsService.swift */; };
+		C3938EBF2839127F00D20D97 /* LocationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EBE2839127F00D20D97 /* LocationsProvider.swift */; };
+		C3938EC12839285800D20D97 /* LocationsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EC02839285800D20D97 /* LocationsDataStore.swift */; };
 		C3938EC528392CFB00D20D97 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = C3938EC428392CFB00D20D97 /* landmarkData.json */; };
+		C3938ECE28394B8500D20D97 /* UIView+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ECD28394B8500D20D97 /* UIView+Sugar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,16 +48,25 @@
 		C3938E7B2837E30800D20D97 /* FavoritePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoritePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3938E7E2837E30800D20D97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3938E822837E30800D20D97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C3938E822837E30800D20D97 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		C3938E872837E30A00D20D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3938E8A2837E30A00D20D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3938E8C2837E30A00D20D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3938E962837E9D400D20D97 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 		C3938E9B2837EF2200D20D97 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		C3938EA02837F54A00D20D97 /* LocationsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsBuilder.swift; sourceTree = "<group>"; };
+		C3938EA62837F63500D20D97 /* LocationsDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataFlow.swift; sourceTree = "<group>"; };
+		C3938EAA2837F66200D20D97 /* LocationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsInteractor.swift; sourceTree = "<group>"; };
+		C3938EAE2837F68A00D20D97 /* LocationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPresenter.swift; sourceTree = "<group>"; };
 		C3938EB32838168B00D20D97 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		C3938EB52838169200D20D97 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		C3938EB72838171B00D20D97 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		C3938EB92838DB0400D20D97 /* UniqueIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIdentifiable.swift; sourceTree = "<group>"; };
+		C3938EBC2839127600D20D97 /* LocationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsService.swift; sourceTree = "<group>"; };
+		C3938EBE2839127F00D20D97 /* LocationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsProvider.swift; sourceTree = "<group>"; };
+		C3938EC02839285800D20D97 /* LocationsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataStore.swift; sourceTree = "<group>"; };
 		C3938EC428392CFB00D20D97 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
+		C3938ECD28394B8500D20D97 /* UIView+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Sugar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +101,7 @@
 		C3938E7D2837E30800D20D97 /* FavoritePlaces */ = {
 			isa = PBXGroup;
 			children = (
+				C3938ECB28394B6600D20D97 /* Helpers */,
 				C3938E922837E4D000D20D97 /* Sources */,
 				C3938E932837E4DA00D20D97 /* Resources */,
 			);
@@ -140,6 +159,13 @@
 		C3938E9E2837F4E800D20D97 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				C3938EA02837F54A00D20D97 /* LocationsBuilder.swift */,
+				C3938EA62837F63500D20D97 /* LocationsDataFlow.swift */,
+				C3938EAA2837F66200D20D97 /* LocationsInteractor.swift */,
+				C3938EAE2837F68A00D20D97 /* LocationsPresenter.swift */,
+				C3938E822837E30800D20D97 /* LocationsViewController.swift */,
+				C3938EC62839335900D20D97 /* View */,
+				C3938EBB2839125B00D20D97 /* Provider */,
 				C3938EB22838168000D20D97 /* Model */,
 			);
 			path = Locations;
@@ -152,6 +178,39 @@
 				C3938EB52838169200D20D97 /* LocationViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C3938EBB2839125B00D20D97 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C3938EBC2839127600D20D97 /* LocationsService.swift */,
+				C3938EC02839285800D20D97 /* LocationsDataStore.swift */,
+				C3938EBE2839127F00D20D97 /* LocationsProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		C3938EC62839335900D20D97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C3938ECB28394B6600D20D97 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C3938ECC28394B6C00D20D97 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C3938ECC28394B6C00D20D97 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3938ECD28394B8500D20D97 /* UIView+Sugar.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,11 +286,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3938E832837E30800D20D97 /* ViewController.swift in Sources */,
+				C3938EAB2837F66200D20D97 /* LocationsInteractor.swift in Sources */,
+				C3938EA72837F63500D20D97 /* LocationsDataFlow.swift in Sources */,
+				C3938EAF2837F68A00D20D97 /* LocationsPresenter.swift in Sources */,
 				C3938EB82838171B00D20D97 /* Result.swift in Sources */,
+				C3938EA12837F54A00D20D97 /* LocationsBuilder.swift in Sources */,
+				C3938E832837E30800D20D97 /* LocationsViewController.swift in Sources */,
 				C3938EBA2838DB0400D20D97 /* UniqueIdentifiable.swift in Sources */,
 				C3938EB42838168B00D20D97 /* LocationModel.swift in Sources */,
 				C3938EB62838169200D20D97 /* LocationViewModel.swift in Sources */,
 				C3938E7F2837E30800D20D97 /* AppDelegate.swift in Sources */,
+				C3938EC12839285800D20D97 /* LocationsDataStore.swift in Sources */,
+				C3938EBD2839127600D20D97 /* LocationsService.swift in Sources */,
+				C3938ECE28394B8500D20D97 /* UIView+Sugar.swift in Sources */,
+				C3938EBF2839127F00D20D97 /* LocationsProvider.swift in Sources */,
 				C3938E9C2837EF2200D20D97 /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
