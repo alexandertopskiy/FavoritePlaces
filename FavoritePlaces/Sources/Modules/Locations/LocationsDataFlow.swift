@@ -8,9 +8,15 @@ import UIKit
 enum Locations {
     enum ShowItems {
         struct Request {
+
         }
 
         struct Response {
+            var result: Result<[LocationModel]>
+
+            enum Error: Swift.Error {
+                case fetchError
+            }
         }
 
         struct ViewModel {
@@ -19,5 +25,9 @@ enum Locations {
     }
 
     enum ViewControllerState {
+        case loading
+        case result([LocationViewModel])
+        case emptyResult(title: String, subtitle: String)
+        case error(message: String)
     }
 }
