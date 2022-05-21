@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptionsKey?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
+        let controller = LocationsBuilder().setTitle("Landmarks").build()
+        window?.rootViewController = controller
         window?.makeKeyAndVisible()
         return true
     }

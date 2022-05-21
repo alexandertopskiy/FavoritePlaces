@@ -6,4 +6,25 @@
 import UIKit
 
 class LocationsBuilder: ModuleBuilder {
+    var title: String?
+
+    func setTitle(_ title: String) -> Self {
+        self.title = title
+        return self
+    }
+
+    func build() -> UIViewController {
+        guard let title = title else {
+            fatalError("You should set a title")
+        }
+        let presenter = LocationsPresenter()
+        let interactor = LocationsInteractor(presenter: presenter)
+        let controller = LocationsViewController(
+            title: title,
+            interactor: interactor,
+            initialState: .loading
+        )
+        presenter.viewController = controller
+        return controller
+    }
 }
