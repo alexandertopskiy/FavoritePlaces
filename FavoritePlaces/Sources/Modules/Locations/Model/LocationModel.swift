@@ -5,6 +5,8 @@
 
 import Foundation
 
+typealias LocationsResponse = [LocationModel]
+
 struct LocationModel: UniqueIdentifiable, Decodable {
     let uid: UniqueIdentifier
     let name: String
