@@ -31,6 +31,7 @@
 		C3938ECE28394B8500D20D97 /* UIView+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ECD28394B8500D20D97 /* UIView+Sugar.swift */; };
 		C3938ED028394D3B00D20D97 /* LocationsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ECF28394D3B00D20D97 /* LocationsEmptyView.swift */; };
 		C3938ED2283A463600D20D97 /* LocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED1283A463600D20D97 /* LocationsTableViewCell.swift */; };
+		C3938ED4283A487900D20D97 /* LocationsTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */; };
 		C3938ED6283A4C4800D20D97 /* Array+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */; };
 		C3938ED8283A4C8D00D20D97 /* UITableView+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		C3938ECD28394B8500D20D97 /* UIView+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Sugar.swift"; sourceTree = "<group>"; };
 		C3938ECF28394D3B00D20D97 /* LocationsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsEmptyView.swift; sourceTree = "<group>"; };
 		C3938ED1283A463600D20D97 /* LocationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewCell.swift; sourceTree = "<group>"; };
+		C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableDataSource.swift; sourceTree = "<group>"; };
 		C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sugar.swift"; sourceTree = "<group>"; };
 		C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Sugar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 				C3938EAA2837F66200D20D97 /* LocationsInteractor.swift */,
 				C3938EAE2837F68A00D20D97 /* LocationsPresenter.swift */,
 				C3938E822837E30800D20D97 /* LocationsViewController.swift */,
+				C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */,
 				C3938EC62839335900D20D97 /* View */,
 				C3938EBB2839125B00D20D97 /* Provider */,
 				C3938EB22838168000D20D97 /* Model */,
@@ -315,6 +318,7 @@
 				C3938EC12839285800D20D97 /* LocationsDataStore.swift in Sources */,
 				C3938ED8283A4C8D00D20D97 /* UITableView+Sugar.swift in Sources */,
 				C3938ED6283A4C4800D20D97 /* Array+Sugar.swift in Sources */,
+				C3938ED4283A487900D20D97 /* LocationsTableDataSource.swift in Sources */,
 				C3938EBD2839127600D20D97 /* LocationsService.swift in Sources */,
 				C3938ECE28394B8500D20D97 /* UIView+Sugar.swift in Sources */,
 				C3938ED2283A463600D20D97 /* LocationsTableViewCell.swift in Sources */,
