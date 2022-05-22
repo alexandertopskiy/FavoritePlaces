@@ -9,7 +9,7 @@ protocol LocationPresentationLogic {
     func presentItems(response: Locations.ShowItems.Response)
 }
 
-class LocationsPresenter: LocationPresentationLogic {
+final class LocationsPresenter: LocationPresentationLogic {
     weak var viewController: LocationsDisplayLogic?
     let errorMessage = "Error loading data 💩"
     let emptyTitle = "Nothing to do here 🚀"

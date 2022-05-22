@@ -5,7 +5,7 @@
 
 import UIKit
 
-class LocationsBuilder: ModuleBuilder {
+final class LocationsBuilder: ModuleBuilder {
     var title: String?
 
     func setTitle(_ title: String) -> Self {

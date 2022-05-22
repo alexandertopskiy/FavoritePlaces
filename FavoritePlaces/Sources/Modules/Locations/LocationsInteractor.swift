@@ -7,7 +7,7 @@ protocol LocationBusinessLogic {
     func fetchItems(request: Locations.ShowItems.Request)
 }
 
-class LocationsInteractor: LocationBusinessLogic {
+final class LocationsInteractor: LocationBusinessLogic {
      let presenter: LocationPresentationLogic
      let provider: LocationsProviderProtocol
 

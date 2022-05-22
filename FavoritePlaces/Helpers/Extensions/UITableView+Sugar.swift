@@ -1,0 +1,53 @@
+//
+//  Created by Alexander Loshakov on 22/05/2022
+//  Copyright © 2022 Alexander Loshakov. All rights reserved.
+//
+
+import UIKit.UITableView
+
+extension UITableView {
+
+    static func defaultReuseId(for elementType: UIView.Type) -> String {
+        return String(describing: elementType)
+    }
+
+    convenience init(
+        delegate: UITableViewDelegate,
+        dataSource: UITableViewDataSource,
+        backgroundColor: UIColor = UIColor.white,
+        estimatedRowHeight: CGFloat = 80
+    ) {
+        self.init()
+        self.delegate = delegate
+        self.dataSource = dataSource
+        self.backgroundColor = backgroundColor
+        self.estimatedRowHeight = estimatedRowHeight
+        self.rowHeight = UITableView.automaticDimension
+    }
+
+    func dequeueReusableCellWithRegistration<T: UITableViewCell>(type: T.Type, indexPath: IndexPath, reuseId: String? = nil) -> T {
+        let normalizedReuseId = reuseId ?? UITableView.defaultReuseId(for: T.self)
+        if let cell = dequeueReusableCell(withIdentifier: normalizedReuseId) as? T {
+            return cell
+        }
+        register(type, forCellReuseIdentifier: normalizedReuseId)
+
+        guard let cell = dequeueReusableCell(withIdentifier: normalizedReuseId, for: indexPath) as? T else {
+            fatalError("Unable to dequeue reusable cell for indexPath: \((indexPath.section, indexPath.item))")
+        }
+        return cell
+    }
+
+    func dequeueReusableHeaderFooterWithRegistration<T: UITableViewHeaderFooterView>(type: T.Type, reuseId: String? = nil) -> T {
+        let normalizedReuseId = reuseId ?? UITableView.defaultReuseId(for: T.self)
+        if let view = dequeueReusableHeaderFooterView(withIdentifier: normalizedReuseId) as? T {
+            return view
+        }
+        register(type, forHeaderFooterViewReuseIdentifier: normalizedReuseId)
+
+        guard let header = dequeueReusableHeaderFooterView(withIdentifier: normalizedReuseId) as? T else {
+            fatalError("Unable to dequeue reusable header")
+        }
+        return header
+    }
+}

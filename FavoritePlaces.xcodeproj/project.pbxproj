@@ -27,6 +27,8 @@
 		C3938EC12839285800D20D97 /* LocationsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EC02839285800D20D97 /* LocationsDataStore.swift */; };
 		C3938EC528392CFB00D20D97 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = C3938EC428392CFB00D20D97 /* landmarkData.json */; };
 		C3938ECE28394B8500D20D97 /* UIView+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ECD28394B8500D20D97 /* UIView+Sugar.swift */; };
+		C3938ED6283A4C4800D20D97 /* Array+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */; };
+		C3938ED8283A4C8D00D20D97 /* UITableView+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +67,8 @@
 		C3938EC02839285800D20D97 /* LocationsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDataStore.swift; sourceTree = "<group>"; };
 		C3938EC428392CFB00D20D97 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		C3938ECD28394B8500D20D97 /* UIView+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Sugar.swift"; sourceTree = "<group>"; };
+		C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sugar.swift"; sourceTree = "<group>"; };
+		C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Sugar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				C3938ECD28394B8500D20D97 /* UIView+Sugar.swift */,
+				C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */,
+				C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +299,8 @@
 				C3938EB62838169200D20D97 /* LocationViewModel.swift in Sources */,
 				C3938E7F2837E30800D20D97 /* AppDelegate.swift in Sources */,
 				C3938EC12839285800D20D97 /* LocationsDataStore.swift in Sources */,
+				C3938ED8283A4C8D00D20D97 /* UITableView+Sugar.swift in Sources */,
+				C3938ED6283A4C4800D20D97 /* Array+Sugar.swift in Sources */,
 				C3938EBD2839127600D20D97 /* LocationsService.swift in Sources */,
 				C3938ECE28394B8500D20D97 /* UIView+Sugar.swift in Sources */,
 				C3938EBF2839127F00D20D97 /* LocationsProvider.swift in Sources */,

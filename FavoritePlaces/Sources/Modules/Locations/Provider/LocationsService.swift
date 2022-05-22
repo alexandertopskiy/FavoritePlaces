@@ -9,7 +9,7 @@ protocol LocationsServiceProtocol {
     func fetchItems(completion: @escaping ([LocationModel]?, Error?) -> Void)
 }
 
-class LocationsService: LocationsServiceProtocol {
+final class LocationsService: LocationsServiceProtocol {
     let decoder: JSONDecoder
 
     init(decoder: JSONDecoder = JSONDecoder()) {

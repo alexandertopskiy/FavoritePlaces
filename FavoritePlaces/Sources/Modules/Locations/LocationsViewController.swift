@@ -13,7 +13,7 @@ protocol LocationsViewControllerDelegate: AnyObject {
     func openLocationDetails(_ locationId: UniqueIdentifier)
 }
 
-class LocationsViewController: UIViewController {
+final class LocationsViewController: UIViewController {
     let interactor: LocationBusinessLogic
     var state: Locations.ViewControllerState
 
@@ -49,6 +49,8 @@ class LocationsViewController: UIViewController {
         interactor.fetchItems(request: request)
     }
 }
+
+// MARK: -  LocationsDisplayLogic
 
 extension LocationsViewController: LocationsDisplayLogic {
     func displayItems(viewModel: Locations.ShowItems.ViewModel) {

@@ -9,7 +9,7 @@ protocol LocationsDataStoreProtocol: AnyObject {
     var models: [LocationModel]? { get set }
 }
 
-class LocationsDataStore: LocationsDataStoreProtocol {
+final class LocationsDataStore: LocationsDataStoreProtocol {
     static let shared = LocationsDataStore()
     var models: [LocationModel]?
 }
