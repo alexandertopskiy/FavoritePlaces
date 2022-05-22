@@ -20,6 +20,7 @@ final class LocationsTableDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithRegistration(type: LocationsTableViewCell.self, indexPath: indexPath)
         guard let viewModel = representableViewModels[safe: indexPath.row] else { return cell }
         cell.configure(cellRepresentable: viewModel)
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 }

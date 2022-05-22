@@ -8,24 +8,44 @@ import SnapKit
 
 final class LocationsTableViewCell: UITableViewCell {
     struct Appearance {
+        let iconSide: CGFloat = 50
+        let iconInsets: UIEdgeInsets = .init(top: 5, left: 12, bottom: 5, right: 10)
         let labelOffset: CGFloat = 12
         let separatorHeight: CGFloat = 1
-        let separatorColor = UIColor(red: 11/255, green: 31/255, blue: 53/255, alpha: 0.05)
+        let defaultFontSize: CGFloat = 15
+
         let titleColor: UIColor = .black
+        let separatorColor: UIColor = .init(red: 11/255, green: 31/255, blue: 53/255, alpha: 0.05)
+        let starColor: UIColor = .init(red: 255/255, green: 202/255, blue: 2/255, alpha: 1)
     }
 
     let appearance = Appearance()
 
     // MARK: -  Subviews
 
-    lazy var title: UILabel = {
-        let typeLabel = UILabel()
-        typeLabel.textColor = self.appearance.titleColor
-        typeLabel.numberOfLines = 2
-        return typeLabel
+    private lazy var title: UILabel = {
+        let label = UILabel()
+        label.textColor = self.appearance.titleColor
+        label.font = .systemFont(ofSize: appearance.defaultFontSize)
+        return label
     }()
 
-    lazy var separator: UIView = {
+    private lazy var iconImageView: UIImageView = {
+        let view = UIImageView()
+        view.setRadius(radius: appearance.iconSide / 2)
+        return view
+    }()
+
+    private lazy var starImageView: UIImageView = {
+        let view = UIImageView()
+        let configuration: UIImage.SymbolConfiguration = .init(font: .systemFont(ofSize: appearance.defaultFontSize))
+        let image = UIImage(systemName: "star.fill", withConfiguration: configuration)
+        view.image = image
+        view.tintColor = appearance.starColor
+        return view
+    }()
+
+    private lazy var separator: UIView = {
         let view = UIView()
         view.backgroundColor = self.appearance.separatorColor
         return view
@@ -36,7 +56,12 @@ final class LocationsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        contentView.addSubviews(title, separator)
+        contentView.addSubviews(
+            iconImageView,
+            title,
+            starImageView,
+            separator
+        )
         configureLayout()
     }
 
@@ -45,13 +70,23 @@ final class LocationsTableViewCell: UITableViewCell {
     }
 
     func configureLayout() {
+        iconImageView.snp.makeConstraints { make in
+            make.top.bottom.leading.equalToSuperview().inset(appearance.iconInsets)
+            make.width.height.equalTo(appearance.iconSide)
+        }
         title.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(appearance.labelOffset)
+            make.leading.equalTo(iconImageView.snp.trailing).offset(appearance.iconInsets.right)
+            make.centerY.equalToSuperview()
+        }
+        starImageView.snp.makeConstraints { make in
+            make.leading.equalTo(title.snp.trailing).offset(5)
+            make.trailing.equalToSuperview().inset(appearance.labelOffset)
+            make.centerY.equalToSuperview()
         }
         separator.snp.makeConstraints { make in
-            make.right.bottom.equalToSuperview()
+            make.trailing.bottom.equalToSuperview()
+            make.leading.equalToSuperview().offset(appearance.labelOffset)
             make.height.equalTo(appearance.separatorHeight)
-            make.left.equalToSuperview().offset(appearance.labelOffset)
         }
     }
 
@@ -59,6 +94,7 @@ final class LocationsTableViewCell: UITableViewCell {
 
     func configure(cellRepresentable: LocationViewModel) {
         title.text = cellRepresentable.title
+        iconImageView.image = cellRepresentable.image
+        starImageView.isHidden = !cellRepresentable.isFavorite
     }
 }
-
