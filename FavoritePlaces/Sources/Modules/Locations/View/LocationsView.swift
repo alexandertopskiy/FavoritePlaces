@@ -45,12 +45,7 @@ final class LocationsView: UIView {
 
     // MARK: -  Lifecycle
 
-    init(
-        frame: CGRect,
-        tableDataSouce: UITableViewDataSource,
-        refreshDelegate: LocationsErrorViewDelegate,
-        appearance: Appearance = .init()
-    ) {
+    init(frame: CGRect, tableDataSouce: UITableViewDataSource, refreshDelegate: LocationsErrorViewDelegate, appearance: Appearance = .init()) {
         tableView = .init()
         super.init(frame: frame)
         tableView.dataSource = tableDataSouce

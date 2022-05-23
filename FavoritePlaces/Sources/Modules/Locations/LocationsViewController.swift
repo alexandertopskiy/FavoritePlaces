@@ -73,7 +73,7 @@ extension LocationsViewController: LocationsDisplayLogic {
             customView?.showLoading()
             fetchItems()
         case let .result(items):
-            print("result: \n\(items)")
+            print("result: \(items.count) items")
             tableDataSource.representableViewModels = items
             customView?.updateTableViewData()
         case let .emptyResult(title, subtitle):
