@@ -8,7 +8,7 @@ import UIKit
 enum Locations {
     enum ShowItems {
         struct Request {
-
+            let isFavorite: Bool
         }
 
         struct Response {
@@ -25,7 +25,8 @@ enum Locations {
     }
 
     enum ViewControllerState {
-        case loading
+        case loadingAll
+        case loadingFavorites
         case result([LocationViewModel])
         case emptyResult(title: String, subtitle: String)
         case error(message: String)

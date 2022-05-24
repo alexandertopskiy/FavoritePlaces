@@ -34,6 +34,7 @@
 		C3938ED4283A487900D20D97 /* LocationsTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */; };
 		C3938ED6283A4C4800D20D97 /* Array+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */; };
 		C3938ED8283A4C8D00D20D97 /* UITableView+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */; };
+		C3938EDA283CE97A00D20D97 /* LocationsPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED9283CE97A00D20D97 /* LocationsPreferencesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +80,7 @@
 		C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableDataSource.swift; sourceTree = "<group>"; };
 		C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sugar.swift"; sourceTree = "<group>"; };
 		C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Sugar.swift"; sourceTree = "<group>"; };
+		C3938ED9283CE97A00D20D97 /* LocationsPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPreferencesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				C3938EC928393E4200D20D97 /* LocationsErrorView.swift */,
 				C3938ECF28394D3B00D20D97 /* LocationsEmptyView.swift */,
 				C3938ED1283A463600D20D97 /* LocationsTableViewCell.swift */,
+				C3938ED9283CE97A00D20D97 /* LocationsPreferencesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				C3938ECE28394B8500D20D97 /* UIView+Sugar.swift in Sources */,
 				C3938ED2283A463600D20D97 /* LocationsTableViewCell.swift in Sources */,
 				C3938EC82839336400D20D97 /* LocationsView.swift in Sources */,
+				C3938EDA283CE97A00D20D97 /* LocationsPreferencesView.swift in Sources */,
 				C3938EBF2839127F00D20D97 /* LocationsProvider.swift in Sources */,
 				C3938E9C2837EF2200D20D97 /* ModuleBuilder.swift in Sources */,
 			);

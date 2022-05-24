@@ -22,7 +22,7 @@ final class LocationsViewController: UIViewController {
 
     // MARK: -  Lifecycle
 
-    init(title: String, interactor: LocationBusinessLogic, initialState: Locations.ViewControllerState = .loading) {
+    init(title: String, interactor: LocationBusinessLogic, initialState: Locations.ViewControllerState = .loadingAll) {
         self.interactor = interactor
         self.state = initialState
         super.init(nibName: nil, bundle: nil)
@@ -38,7 +38,8 @@ final class LocationsViewController: UIViewController {
         let view = LocationsView(
             frame: UIScreen.main.bounds,
             tableDataSouce: tableDataSource,
-            refreshDelegate: self
+            refreshDelegate: self,
+            switchDelegate: self
         )
         
         self.view = view
@@ -52,8 +53,8 @@ final class LocationsViewController: UIViewController {
 
     // MARK: -  Private
 
-    private func fetchItems() {
-        let request = Locations.ShowItems.Request()
+    private func fetchItems(isFavoriteOnly: Bool) {
+        let request = Locations.ShowItems.Request(isFavorite: isFavoriteOnly)
         interactor.fetchItems(request: request)
     }
 }
@@ -68,10 +69,14 @@ extension LocationsViewController: LocationsDisplayLogic {
     func display(newState: Locations.ViewControllerState) {
         state = newState
         switch state {
-        case .loading:
-            print("loading")
+        case .loadingAll:
+            print("loading all")
             customView?.showLoading()
-            fetchItems()
+            fetchItems(isFavoriteOnly: false)
+        case .loadingFavorites:
+            print("loading Favorites")
+            customView?.showLoading()
+            fetchItems(isFavoriteOnly: true)
         case let .result(items):
             print("result: \(items.count) items")
             tableDataSource.representableViewModels = items
@@ -90,6 +95,18 @@ extension LocationsViewController: LocationsDisplayLogic {
 
 extension LocationsViewController: LocationsErrorViewDelegate {
     func reloadButtonWasTapped() {
-        display(newState: .loading)
+        display(newState: .loadingAll)
+    }
+}
+
+// MARK: -  LocationsHeaderViewDelegate
+
+extension LocationsViewController: LocationsPreferencesViewDelegate {
+    func switchValueChanged(_ isOn: Bool) {
+        if isOn {
+            display(newState: .loadingFavorites)
+        } else {
+            display(newState: .loadingAll)
+        }
     }
 }

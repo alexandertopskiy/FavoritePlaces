@@ -77,6 +77,6 @@ final class LocationsErrorView: UIView {
     // MARK: -  Actions
 
     @objc private func refreshButtonPressed() {
-
+        delegate?.reloadButtonWasTapped()
     }
 }

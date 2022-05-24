@@ -18,20 +18,22 @@ final class LocationsView: UIView {
     var appearance = Appearance()
 
     weak var refreshActionsDelegate: LocationsErrorViewDelegate?
+    weak var switchActionsDelegate: LocationsPreferencesViewDelegate?
 
     // MARK: -  Subviews
 
-    var tableView: UITableView
+    private var tableView: UITableView
+    private lazy var emptyView: LocationsEmptyView = .init()
 
-    private lazy var emptyView: LocationsEmptyView = {
-        let view = LocationsEmptyView()
-        
+    private lazy var headerView: LocationsPreferencesView = {
+        let view = LocationsPreferencesView()
+        view.delegate = switchActionsDelegate
         return view
     }()
 
     private lazy var errorView: LocationsErrorView = {
         let view = LocationsErrorView()
-
+        view.delegate = refreshActionsDelegate
         return view
     }()
 
@@ -45,15 +47,23 @@ final class LocationsView: UIView {
 
     // MARK: -  Lifecycle
 
-    init(frame: CGRect, tableDataSouce: UITableViewDataSource, refreshDelegate: LocationsErrorViewDelegate, appearance: Appearance = .init()) {
+    init(
+        frame: CGRect,
+        tableDataSouce: UITableViewDataSource,
+        refreshDelegate: LocationsErrorViewDelegate,
+        switchDelegate: LocationsPreferencesViewDelegate,
+        appearance: Appearance = .init()
+    ) {
         tableView = .init()
         super.init(frame: frame)
         tableView.dataSource = tableDataSouce
         refreshActionsDelegate = refreshDelegate
+        switchActionsDelegate = switchDelegate
 
         backgroundColor = .white
         configureTableView()
         addSubviews(
+            headerView,
             tableView,
             emptyView,
             errorView,
@@ -77,9 +87,14 @@ final class LocationsView: UIView {
         spinner.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
+        headerView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide)
+        }
         [tableView, emptyView, errorView].forEach {
             $0.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
+                make.top.equalTo(headerView.snp.bottom)
+                make.trailing.leading.bottom.equalToSuperview()
             }
         }
     }
@@ -106,7 +121,9 @@ final class LocationsView: UIView {
     }
 
     private func show(view: UIView) {
-        subviews.forEach { $0.isHidden = (view != $0) }
+        subviews.forEach {
+            $0.isHidden = (view != $0 && $0 != headerView)
+        }
     }
 
     func updateTableViewData() {

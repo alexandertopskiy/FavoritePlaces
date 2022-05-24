@@ -22,7 +22,7 @@ final class LocationsBuilder: ModuleBuilder {
         let controller = LocationsViewController(
             title: title,
             interactor: interactor,
-            initialState: .loading
+            initialState: .loadingAll
         )
         presenter.viewController = controller
         return controller
