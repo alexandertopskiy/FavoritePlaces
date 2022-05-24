@@ -50,6 +50,8 @@ extension LocationsService: LocationsServiceProtocol {
         if let data = readLocalJSONFile(forName: "landmarkData") {
             let models = parseSuccessData(data: data)
             completion(models, nil)
+        } else {
+            completion(nil, Locations.ShowItems.Response.Error.fetchError)
         }
     }
 }

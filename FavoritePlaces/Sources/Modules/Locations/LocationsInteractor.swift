@@ -26,7 +26,7 @@ extension LocationsInteractor: LocationBusinessLogic {
         provider.getItems { (items, error) in
             let result: Result<[LocationModel]>
             if let items = items {
-                if request.isFavoriteOnly {
+                if request.isFavorite {
                     result = .success(items.filter { $0.isFavorite })
                 } else {
                     result = .success(items)

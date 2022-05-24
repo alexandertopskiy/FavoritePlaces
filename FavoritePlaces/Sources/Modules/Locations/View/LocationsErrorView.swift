@@ -36,6 +36,7 @@ final class LocationsErrorView: UIView {
         label.textColor = appearance.titleColor
         label.textAlignment = .center
         label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
 
@@ -65,8 +66,8 @@ final class LocationsErrorView: UIView {
     private func configureLayout() {
         title.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(appearance.titleInsets.left)
-            make.trailing.equalToSuperview().offset(appearance.titleInsets.right)
+            make.leading.equalToSuperview().inset(appearance.titleInsets.left)
+            make.trailing.equalToSuperview().inset(appearance.titleInsets.right)
         }
         refteshButton.snp.makeConstraints { make in
             make.centerX.equalTo(title.snp.centerX)

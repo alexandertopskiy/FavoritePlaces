@@ -46,8 +46,8 @@ extension LocationsPresenter: LocationPresentationLogic {
                 let locations = viewModels(from: result)
                 viewModel = .init(state: .result(locations))
             }
-        case let .failure(error):
-            viewModel = .init(state: .error(message: error.localizedDescription))
+        case .failure:
+            viewModel = .init(state: .error(message: errorMessage))
         }
         viewController?.displayItems(viewModel: viewModel)
     }

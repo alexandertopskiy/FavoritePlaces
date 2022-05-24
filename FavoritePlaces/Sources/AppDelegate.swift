@@ -13,8 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptionsKey?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let controller = LocationsBuilder().setTitle("Landmarks").build()
-        window?.rootViewController = controller
+        let mainViewController = LocationsBuilder().setTitle("Landmarks").build()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }
