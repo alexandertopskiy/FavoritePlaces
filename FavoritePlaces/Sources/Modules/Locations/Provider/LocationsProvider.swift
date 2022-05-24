@@ -13,18 +13,21 @@ enum LocationsProviderError: Error {
     case getItemsFailed(withError: Error)
 }
 
-struct LocationsProvider: LocationsProviderProtocol {
+struct LocationsProvider {
     let dataStore: LocationsDataStoreProtocol
     let service: LocationsServiceProtocol
 
-    init(
-        dataStore: LocationsDataStoreProtocol = LocationsDataStore(),
-        service: LocationsServiceProtocol = LocationsService()
-    ) {
+    // MARK: -  Lifecycle
+
+    init(dataStore: LocationsDataStoreProtocol = LocationsDataStore(), service: LocationsServiceProtocol = LocationsService()) {
         self.dataStore = dataStore
         self.service = service
     }
+}
 
+// MARK: -  LocationsProviderProtocol
+
+extension LocationsProvider: LocationsProviderProtocol {
     func getItems(completion: @escaping ([LocationModel]?, LocationsProviderError?) -> Void) {
         if dataStore.models?.isEmpty == false {
             return completion(self.dataStore.models, nil)
@@ -34,7 +37,7 @@ struct LocationsProvider: LocationsProviderProtocol {
                 completion(nil, .getItemsFailed(withError: error))
             } else if let models = models {
                 self.dataStore.models = models
-                completion(self.dataStore.models, nil) 
+                completion(self.dataStore.models, nil)
             }
         }
     }

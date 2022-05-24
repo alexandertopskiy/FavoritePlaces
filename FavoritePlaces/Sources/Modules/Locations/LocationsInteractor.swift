@@ -7,7 +7,7 @@ protocol LocationBusinessLogic {
     func fetchItems(request: Locations.ShowItems.Request)
 }
 
-final class LocationsInteractor: LocationBusinessLogic {
+final class LocationsInteractor {
      let presenter: LocationPresentationLogic
      let provider: LocationsProviderProtocol
 
@@ -17,14 +17,20 @@ final class LocationsInteractor: LocationBusinessLogic {
         self.presenter = presenter
         self.provider = provider
     }
+}
 
-    // MARK: -  Fetching
+// MARK: -  LocationBusinessLogic
 
+extension LocationsInteractor: LocationBusinessLogic {
     func fetchItems(request: Locations.ShowItems.Request) {
         provider.getItems { (items, error) in
             let result: Result<[LocationModel]>
             if let items = items {
-                result = .success(items)
+                if request.isFavoriteOnly {
+                    result = .success(items.filter { $0.isFavorite })
+                } else {
+                    result = .success(items)
+                }
             } else {
                 result = .failure(Locations.ShowItems.Response.Error.fetchError)
             }

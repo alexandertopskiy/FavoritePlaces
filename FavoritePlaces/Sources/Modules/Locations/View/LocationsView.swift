@@ -8,10 +8,6 @@ import SnapKit
 
 final class LocationsView: UIView {
     struct Appearance {
-        let errorTitle: String = "Error loading data 💩"
-        let emptyTitle: String = "Nothing to do here 🚀"
-        let emptySubtitle: String = "Maybe later"
-
         let spinnerColor: UIColor = .black
     }
 

@@ -9,19 +9,16 @@ protocol LocationsServiceProtocol {
     func fetchItems(completion: @escaping ([LocationModel]?, Error?) -> Void)
 }
 
-final class LocationsService: LocationsServiceProtocol {
+final class LocationsService {
     let decoder: JSONDecoder
+
+    // MARK: -  Lifecycle
 
     init(decoder: JSONDecoder = JSONDecoder()) {
         self.decoder = decoder
     }
 
-    func fetchItems(completion: @escaping ([LocationModel]?, Error?) -> Void) {
-        if let data = readLocalJSONFile(forName: "landmarkData") {
-            let models = parseSuccessData(data: data)
-            completion(models, nil)
-        }
-    }
+    // MARK: -  Private
 
     private func readLocalJSONFile(forName name: String) -> Data? {
         do {
@@ -42,6 +39,17 @@ final class LocationsService: LocationsServiceProtocol {
             return models
         } catch {
             return nil
+        }
+    }
+}
+
+// MARK: -  LocationsServiceProtocol
+
+extension LocationsService: LocationsServiceProtocol {
+    func fetchItems(completion: @escaping ([LocationModel]?, Error?) -> Void) {
+        if let data = readLocalJSONFile(forName: "landmarkData") {
+            let models = parseSuccessData(data: data)
+            completion(models, nil)
         }
     }
 }

@@ -33,7 +33,6 @@ final class LocationsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // Подменяем базовую вью у контроллера своей кастомной вьюшкой
     override func loadView() {
         let view = LocationsView(
             frame: UIScreen.main.bounds,
@@ -41,7 +40,6 @@ final class LocationsViewController: UIViewController {
             refreshDelegate: self,
             switchDelegate: self
         )
-        
         self.view = view
     }
 
@@ -99,7 +97,7 @@ extension LocationsViewController: LocationsErrorViewDelegate {
     }
 }
 
-// MARK: -  LocationsHeaderViewDelegate
+// MARK: -  LocationsPreferencesViewDelegate
 
 extension LocationsViewController: LocationsPreferencesViewDelegate {
     func switchValueChanged(_ isOn: Bool) {

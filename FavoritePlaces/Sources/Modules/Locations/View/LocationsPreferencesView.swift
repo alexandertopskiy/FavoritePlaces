@@ -9,7 +9,7 @@ protocol LocationsPreferencesViewDelegate: AnyObject {
     func switchValueChanged(_ isOn: Bool)
 }
 
-class LocationsPreferencesView: UIView {
+final class LocationsPreferencesView: UIView {
     struct Appearance {
         let labelFontSize: CGFloat = 15
         let labelInsets: UIEdgeInsets = .init(top: 15, left: 12, bottom: 15, right: 12)
@@ -22,7 +22,6 @@ class LocationsPreferencesView: UIView {
     }
 
     let appearance: Appearance
-
     weak var delegate: LocationsPreferencesViewDelegate?
 
     // MARK: -  Subviews

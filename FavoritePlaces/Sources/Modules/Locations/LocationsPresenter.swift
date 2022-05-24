@@ -9,12 +9,32 @@ protocol LocationPresentationLogic {
     func presentItems(response: Locations.ShowItems.Response)
 }
 
-final class LocationsPresenter: LocationPresentationLogic {
+final class LocationsPresenter {
     weak var viewController: LocationsDisplayLogic?
     let errorMessage = "Error loading data 💩"
     let emptyTitle = "Nothing to do here 🚀"
     let subtitleText = "Maybe later"
 
+    // MARK: -  Private
+
+    private func viewModels(from models: [LocationModel]) -> [LocationViewModel] {
+        var viewModels = [LocationViewModel]()
+        models.forEach { model in
+            let viewModel = LocationViewModel(
+                uid: model.uid,
+                title: model.name,
+                image: UIImage(named: model.imageName),
+                isFavorite: model.isFavorite
+            )
+            viewModels.append(viewModel)
+        }
+        return viewModels
+    }
+}
+
+// MARK: -  LocationPresentationLogic
+
+extension LocationsPresenter: LocationPresentationLogic {
     func presentItems(response: Locations.ShowItems.Response) {
         var viewModel: Locations.ShowItems.ViewModel
 
@@ -30,19 +50,5 @@ final class LocationsPresenter: LocationPresentationLogic {
             viewModel = .init(state: .error(message: error.localizedDescription))
         }
         viewController?.displayItems(viewModel: viewModel)
-    }
-
-    func viewModels(from models: [LocationModel]) -> [LocationViewModel] {
-        var viewModels = [LocationViewModel]()
-        models.forEach { model in
-            let viewModel = LocationViewModel(
-                uid: model.uid,
-                title: model.name,
-                image: UIImage(named: model.imageName),
-                isFavorite: model.isFavorite
-            )
-            viewModels.append(viewModel)
-        }
-        return viewModels
     }
 }
