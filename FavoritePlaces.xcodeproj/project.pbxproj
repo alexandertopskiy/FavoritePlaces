@@ -197,9 +197,9 @@
 		C3938EBB2839125B00D20D97 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				C3938EBE2839127F00D20D97 /* LocationsProvider.swift */,
 				C3938EBC2839127600D20D97 /* LocationsService.swift */,
 				C3938EC02839285800D20D97 /* LocationsDataStore.swift */,
-				C3938EBE2839127F00D20D97 /* LocationsProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
