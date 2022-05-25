@@ -35,6 +35,15 @@
 		C3938ED6283A4C4800D20D97 /* Array+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */; };
 		C3938ED8283A4C8D00D20D97 /* UITableView+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */; };
 		C3938EDA283CE97A00D20D97 /* LocationsPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938ED9283CE97A00D20D97 /* LocationsPreferencesView.swift */; };
+		C3938EDD283E754A00D20D97 /* LocationDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EDC283E754A00D20D97 /* LocationDetailsBuilder.swift */; };
+		C3938EDF283E755400D20D97 /* LocationDetailsDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EDE283E755400D20D97 /* LocationDetailsDataFlow.swift */; };
+		C3938EE1283E755E00D20D97 /* LocationDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EE0283E755E00D20D97 /* LocationDetailsInteractor.swift */; };
+		C3938EE3283E756500D20D97 /* LocationDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EE2283E756500D20D97 /* LocationDetailsPresenter.swift */; };
+		C3938EE5283E756F00D20D97 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EE4283E756F00D20D97 /* LocationDetailsViewController.swift */; };
+		C3938EEA283E87BB00D20D97 /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EE9283E87BB00D20D97 /* LocationDetailsView.swift */; };
+		C3938EEC283E87C700D20D97 /* LocationDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EEB283E87C700D20D97 /* LocationDetailsProvider.swift */; };
+		C3938EF0283E87DD00D20D97 /* LocationDetailsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EEF283E87DD00D20D97 /* LocationDetailsDataStore.swift */; };
+		C3938EF2283E89D900D20D97 /* LocationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EF1283E89D900D20D97 /* LocationDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +90,15 @@
 		C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sugar.swift"; sourceTree = "<group>"; };
 		C3938ED7283A4C8D00D20D97 /* UITableView+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Sugar.swift"; sourceTree = "<group>"; };
 		C3938ED9283CE97A00D20D97 /* LocationsPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPreferencesView.swift; sourceTree = "<group>"; };
+		C3938EDC283E754A00D20D97 /* LocationDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsBuilder.swift; sourceTree = "<group>"; };
+		C3938EDE283E755400D20D97 /* LocationDetailsDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsDataFlow.swift; sourceTree = "<group>"; };
+		C3938EE0283E755E00D20D97 /* LocationDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsInteractor.swift; sourceTree = "<group>"; };
+		C3938EE2283E756500D20D97 /* LocationDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsPresenter.swift; sourceTree = "<group>"; };
+		C3938EE4283E756F00D20D97 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		C3938EE9283E87BB00D20D97 /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
+		C3938EEB283E87C700D20D97 /* LocationDetailsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsProvider.swift; sourceTree = "<group>"; };
+		C3938EEF283E87DD00D20D97 /* LocationDetailsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsDataStore.swift; sourceTree = "<group>"; };
+		C3938EF1283E89D900D20D97 /* LocationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				C3938E9E2837F4E800D20D97 /* Locations */,
+				C3938EDB283E752900D20D97 /* LocationDetails */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -232,6 +251,46 @@
 				C3938ED5283A4C4800D20D97 /* Array+Sugar.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3938EDB283E752900D20D97 /* LocationDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C3938EDC283E754A00D20D97 /* LocationDetailsBuilder.swift */,
+				C3938EDE283E755400D20D97 /* LocationDetailsDataFlow.swift */,
+				C3938EE0283E755E00D20D97 /* LocationDetailsInteractor.swift */,
+				C3938EE2283E756500D20D97 /* LocationDetailsPresenter.swift */,
+				C3938EE4283E756F00D20D97 /* LocationDetailsViewController.swift */,
+				C3938EE6283E757300D20D97 /* Views */,
+				C3938EE7283E757900D20D97 /* Provider */,
+				C3938EE8283E757E00D20D97 /* Model */,
+			);
+			path = LocationDetails;
+			sourceTree = "<group>";
+		};
+		C3938EE6283E757300D20D97 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C3938EE9283E87BB00D20D97 /* LocationDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C3938EE7283E757900D20D97 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C3938EEB283E87C700D20D97 /* LocationDetailsProvider.swift */,
+				C3938EEF283E87DD00D20D97 /* LocationDetailsDataStore.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		C3938EE8283E757E00D20D97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3938EF1283E89D900D20D97 /* LocationDetailsViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,15 +365,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3938EE5283E756F00D20D97 /* LocationDetailsViewController.swift in Sources */,
+				C3938EEA283E87BB00D20D97 /* LocationDetailsView.swift in Sources */,
+				C3938EE1283E755E00D20D97 /* LocationDetailsInteractor.swift in Sources */,
 				C3938EAB2837F66200D20D97 /* LocationsInteractor.swift in Sources */,
 				C3938EA72837F63500D20D97 /* LocationsDataFlow.swift in Sources */,
 				C3938EAF2837F68A00D20D97 /* LocationsPresenter.swift in Sources */,
+				C3938EEC283E87C700D20D97 /* LocationDetailsProvider.swift in Sources */,
 				C3938EB82838171B00D20D97 /* Result.swift in Sources */,
 				C3938EA12837F54A00D20D97 /* LocationsBuilder.swift in Sources */,
+				C3938EE3283E756500D20D97 /* LocationDetailsPresenter.swift in Sources */,
 				C3938ED028394D3B00D20D97 /* LocationsEmptyView.swift in Sources */,
 				C3938ECA28393E4200D20D97 /* LocationsErrorView.swift in Sources */,
 				C3938E832837E30800D20D97 /* LocationsViewController.swift in Sources */,
 				C3938EBA2838DB0400D20D97 /* UniqueIdentifiable.swift in Sources */,
+				C3938EDF283E755400D20D97 /* LocationDetailsDataFlow.swift in Sources */,
+				C3938EF2283E89D900D20D97 /* LocationDetailsViewModel.swift in Sources */,
 				C3938EB42838168B00D20D97 /* LocationModel.swift in Sources */,
 				C3938EB62838169200D20D97 /* LocationViewModel.swift in Sources */,
 				C3938E7F2837E30800D20D97 /* AppDelegate.swift in Sources */,
@@ -327,8 +393,10 @@
 				C3938ED2283A463600D20D97 /* LocationsTableViewCell.swift in Sources */,
 				C3938EC82839336400D20D97 /* LocationsView.swift in Sources */,
 				C3938EDA283CE97A00D20D97 /* LocationsPreferencesView.swift in Sources */,
+				C3938EDD283E754A00D20D97 /* LocationDetailsBuilder.swift in Sources */,
 				C3938EBF2839127F00D20D97 /* LocationsProvider.swift in Sources */,
 				C3938E9C2837EF2200D20D97 /* ModuleBuilder.swift in Sources */,
+				C3938EF0283E87DD00D20D97 /* LocationDetailsDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

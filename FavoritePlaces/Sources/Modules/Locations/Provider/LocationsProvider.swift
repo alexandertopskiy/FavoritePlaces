@@ -19,7 +19,7 @@ struct LocationsProvider {
 
     // MARK: -  Lifecycle
 
-    init(dataStore: LocationsDataStoreProtocol = LocationsDataStore(), service: LocationsServiceProtocol = LocationsService()) {
+    init(dataStore: LocationsDataStoreProtocol = LocationsDataStore.shared, service: LocationsServiceProtocol = LocationsService()) {
         self.dataStore = dataStore
         self.service = service
     }
