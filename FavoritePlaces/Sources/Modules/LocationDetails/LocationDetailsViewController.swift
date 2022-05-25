@@ -17,7 +17,7 @@ final class LocationDetailsViewController: UIViewController {
 
     // MARK: -  Lifecycle
 
-    init(title: String, interactor: LocationDetailsBusinessLogic, initialState: LocationDetails.ViewControllerState = .loading) {
+    init(interactor: LocationDetailsBusinessLogic, initialState: LocationDetails.ViewControllerState) {
         self.interactor = interactor
         self.state = initialState
         super.init(nibName: nil, bundle: nil)
@@ -38,6 +38,13 @@ final class LocationDetailsViewController: UIViewController {
         view.backgroundColor = .white
         display(newState: state)
     }
+
+    // MARK: -  Private
+
+    private func fetchDetailsForItem(withId uuid: UniqueIdentifier) {
+        let request = LocationDetails.ShowItem.Request(uuid: uuid)
+        interactor.fetchItemDetails(request: request)
+    }
 }
 
 // MARK: -  LocationsDisplayLogic
@@ -54,8 +61,14 @@ extension LocationDetailsViewController: LocationDetailsDisplayLogic {
             customView?.showLoading()
         case let .result(model):
             print("result: \(model)")
+            navigationItem.largeTitleDisplayMode = .never
+            title = model.name
         case let .error(message: errorMessage):
             print("error, message: \(errorMessage)")
+        case .initial(id: let id):
+            print("initial state: \(id)")
+            customView?.showLoading()
+            fetchDetailsForItem(withId: id)
         }
     }
 }

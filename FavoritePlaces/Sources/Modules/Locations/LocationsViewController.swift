@@ -17,6 +17,7 @@ final class LocationsViewController: UIViewController {
     let interactor: LocationBusinessLogic
     var state: Locations.ViewControllerState
     var tableDataSource: LocationsTableDataSource = .init()
+    var tableDelegate: LocationsTableDelegate = .init()
 
     private lazy var customView = self.view as? LocationsView
 
@@ -26,6 +27,7 @@ final class LocationsViewController: UIViewController {
         self.interactor = interactor
         self.state = initialState
         super.init(nibName: nil, bundle: nil)
+        tableDelegate.delegate = self
         self.title = title
     }
 
@@ -77,8 +79,9 @@ extension LocationsViewController: LocationsDisplayLogic {
             fetchItems(isFavoriteOnly: true)
         case let .result(items):
             print("result: \(items.count) items")
+            tableDelegate.representableViewModels = items
             tableDataSource.representableViewModels = items
-            customView?.updateTableViewData()
+            customView?.updateTableViewData(delegate: tableDelegate, dataSource: tableDataSource)
         case let .emptyResult(title, subtitle):
             print("emptyResult")
             customView?.showEmptyView(title: title, subtitle: subtitle)
@@ -94,6 +97,13 @@ extension LocationsViewController: LocationsDisplayLogic {
 extension LocationsViewController: LocationsErrorViewDelegate {
     func reloadButtonWasTapped() {
         display(newState: .loadingAll)
+    }
+}
+
+extension LocationsViewController: LocationsViewControllerDelegate {
+    func openLocationDetails(_ locationId: UniqueIdentifier) {
+        let detailsController = LocationDetailsBuilder().set(initialState: .initial(id: locationId)).build()
+        navigationController?.pushViewController(detailsController, animated: true)
     }
 }
 

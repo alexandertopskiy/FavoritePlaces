@@ -7,7 +7,9 @@ import Foundation
 
 enum LocationDetails {
     enum ShowItem {
-        struct Request {}
+        struct Request {
+            let uuid: UniqueIdentifier
+        }
 
         struct Response {
             var result: Result<LocationModel>
@@ -23,6 +25,7 @@ enum LocationDetails {
     }
 
     enum ViewControllerState {
+        case initial(id: UniqueIdentifier)
         case loading
         case result(LocationDetailsViewModel)
         case error(message: String)

@@ -44,6 +44,7 @@
 		C3938EEC283E87C700D20D97 /* LocationDetailsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EEB283E87C700D20D97 /* LocationDetailsProvider.swift */; };
 		C3938EF0283E87DD00D20D97 /* LocationDetailsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EEF283E87DD00D20D97 /* LocationDetailsDataStore.swift */; };
 		C3938EF2283E89D900D20D97 /* LocationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EF1283E89D900D20D97 /* LocationDetailsViewModel.swift */; };
+		C3938EF4283E951400D20D97 /* LocationsTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EF3283E951400D20D97 /* LocationsTableDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +100,7 @@
 		C3938EEB283E87C700D20D97 /* LocationDetailsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsProvider.swift; sourceTree = "<group>"; };
 		C3938EEF283E87DD00D20D97 /* LocationDetailsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsDataStore.swift; sourceTree = "<group>"; };
 		C3938EF1283E89D900D20D97 /* LocationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewModel.swift; sourceTree = "<group>"; };
+		C3938EF3283E951400D20D97 /* LocationsTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				C3938EAE2837F68A00D20D97 /* LocationsPresenter.swift */,
 				C3938E822837E30800D20D97 /* LocationsViewController.swift */,
 				C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */,
+				C3938EF3283E951400D20D97 /* LocationsTableDelegate.swift */,
 				C3938EC62839335900D20D97 /* View */,
 				C3938EBB2839125B00D20D97 /* Provider */,
 				C3938EB22838168000D20D97 /* Model */,
@@ -368,6 +371,7 @@
 				C3938EE5283E756F00D20D97 /* LocationDetailsViewController.swift in Sources */,
 				C3938EEA283E87BB00D20D97 /* LocationDetailsView.swift in Sources */,
 				C3938EE1283E755E00D20D97 /* LocationDetailsInteractor.swift in Sources */,
+				C3938EF4283E951400D20D97 /* LocationsTableDelegate.swift in Sources */,
 				C3938EAB2837F66200D20D97 /* LocationsInteractor.swift in Sources */,
 				C3938EA72837F63500D20D97 /* LocationsDataFlow.swift in Sources */,
 				C3938EAF2837F68A00D20D97 /* LocationsPresenter.swift in Sources */,

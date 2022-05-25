@@ -6,23 +6,22 @@
 import UIKit
 
 final class LocationDetailsBuilder: ModuleBuilder {
-    var title: String?
+    var initialState: LocationDetails.ViewControllerState?
 
-    func setTitle(_ title: String) -> Self {
-        self.title = title
+    func set(initialState: LocationDetails.ViewControllerState) -> Self {
+        self.initialState = initialState
         return self
     }
 
     func build() -> UIViewController {
-        guard let title = title else {
-            fatalError("You should set a title")
+        guard let initialState = initialState else {
+            fatalError("Initial state parameter was not set")
         }
         let presenter = LocationDetailsPresenter()
         let interactor = LocationDetailsInteractor(presenter: presenter)
         let controller = LocationDetailsViewController(
-            title: title,
             interactor: interactor,
-            initialState: .loading
+            initialState: initialState
         )
         presenter.viewController = controller
         return controller

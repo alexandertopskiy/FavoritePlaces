@@ -122,10 +122,12 @@ final class LocationsView: UIView {
         }
     }
 
-    func updateTableViewData() {
+    func updateTableViewData(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         showTable()
         tableView.tableFooterView = nil
         tableView.tableHeaderView = nil
+        tableView.dataSource = dataSource
+        tableView.delegate = delegate
         tableView.reloadData()
     }
 }

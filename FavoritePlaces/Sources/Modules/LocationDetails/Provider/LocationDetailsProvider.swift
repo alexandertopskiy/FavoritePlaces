@@ -6,7 +6,7 @@
 import Foundation
 
 protocol LocationDetailsProviderProtocol {
-    func getItem(completion: @escaping (LocationModel?, LocationDetailsProviderError?) -> Void)
+    func getItem(withId uuid: UniqueIdentifier, completion: @escaping (LocationModel?, LocationDetailsProviderError?) -> Void)
 }
 
 enum LocationDetailsProviderError: Error {
@@ -26,6 +26,11 @@ struct LocationDetailsProvider {
 // MARK: -  LocationDetailsProviderProtocol
 
 extension LocationDetailsProvider: LocationDetailsProviderProtocol {
-    func getItem(completion: @escaping (LocationModel?, LocationDetailsProviderError?) -> Void) {
+    func getItem(withId uuid: UniqueIdentifier, completion: @escaping (LocationModel?, LocationDetailsProviderError?) -> Void) {
+        if dataStore.models?.isEmpty == false {
+            let model = dataStore.models?.first(where: { $0.uid == uuid })
+            return completion(model, nil)
+        }
+        return completion(nil, nil)
     }
 }
