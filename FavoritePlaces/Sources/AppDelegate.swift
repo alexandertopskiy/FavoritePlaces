@@ -13,6 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptionsKey?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor.black
+        ]
         let mainViewController = LocationsBuilder().setTitle("Landmarks").build()
         let navigationController = UINavigationController(rootViewController: mainViewController)
         navigationController.navigationBar.prefersLargeTitles = true

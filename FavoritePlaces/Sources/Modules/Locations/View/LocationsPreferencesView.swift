@@ -29,6 +29,7 @@ final class LocationsPreferencesView: UIView {
     lazy var title: UILabel = {
         let label = UILabel()
         label.text = "Favorites only"
+        label.textColor = .black
         label.font = .systemFont(ofSize: appearance.labelFontSize)
         label.textAlignment = .left
         return label

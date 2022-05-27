@@ -74,6 +74,7 @@ final class LocationsView: UIView {
     }
 
     private func configureTableView() {
+        tableView.backgroundColor = .white
         tableView.separatorStyle = .none
         tableView.sectionFooterHeight = UITableView.automaticDimension
         tableView.sectionHeaderHeight = UITableView.automaticDimension

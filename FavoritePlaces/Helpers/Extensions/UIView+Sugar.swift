@@ -13,6 +13,10 @@ extension UIView {
         self.layer.masksToBounds = true
     }
 
+    func addSubviews(_ subviews: [UIView]) {
+        subviews.forEach(self.addSubview)
+    }
+
     func addSubviews(_ subviews: UIView...) {
         subviews.forEach(self.addSubview)
     }

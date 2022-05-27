@@ -35,7 +35,9 @@ final class LocationDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         view.backgroundColor = .white
+        navigationItem.largeTitleDisplayMode = .never
         display(newState: state)
     }
 
