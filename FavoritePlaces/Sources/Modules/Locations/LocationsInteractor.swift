@@ -31,8 +31,10 @@ extension LocationsInteractor: LocationBusinessLogic {
                 } else {
                     result = .success(items)
                 }
+            } else if let error = error {
+                result = .failure(error.associatedValue)
             } else {
-                result = .failure(Locations.ShowItems.Response.Error.fetchError)
+                result = .failure(Locations.ShowItems.Response.Error.someError)
             }
             self.presenter.presentItems(response: .init(result: result))
         }

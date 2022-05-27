@@ -11,9 +11,6 @@ protocol LocationPresentationLogic {
 
 final class LocationsPresenter {
     weak var viewController: LocationsDisplayLogic?
-    let errorMessage = "Error loading data 💩"
-    let emptyTitle = "Nothing to do here 🚀"
-    let subtitleText = "Maybe later"
 
     // MARK: -  Private
 
@@ -40,14 +37,10 @@ extension LocationsPresenter: LocationPresentationLogic {
 
         switch response.result {
         case let .success(result):
-            if result.isEmpty {
-                viewModel = .init(state: .emptyResult(title: emptyTitle, subtitle: subtitleText))
-            } else {
-                let locations = viewModels(from: result)
-                viewModel = .init(state: .result(locations))
-            }
-        case .failure:
-            viewModel = .init(state: .error(message: errorMessage))
+            let locations = viewModels(from: result)
+            viewModel = .init(state: .result(locations))
+        case let .failure(error):
+            viewModel = .init(state: .error(message: error.localizedDescription))
         }
         viewController?.displayItems(viewModel: viewModel)
     }

@@ -14,8 +14,24 @@ enum Locations {
         struct Response {
             var result: Result<[LocationModel]>
 
-            enum Error: Swift.Error {
+            enum Error: Swift.Error, LocalizedError {
                 case fetchError
+                case parsingError
+                case notFound
+                case someError
+
+                var errorDescription: String? {
+                    switch self {
+                    case .fetchError:
+                        return "Error loading data"
+                    case .parsingError:
+                        return "Data is invalid!"
+                    case .notFound:
+                        return "Nothing Found! Data is empty!"
+                    case .someError:
+                        return "Something went wrong..."
+                    }
+                }
             }
         }
 
