@@ -45,6 +45,7 @@
 		C3938EF2283E89D900D20D97 /* LocationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EF1283E89D900D20D97 /* LocationDetailsViewModel.swift */; };
 		C3938EF4283E951400D20D97 /* LocationsTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EF3283E951400D20D97 /* LocationsTableDelegate.swift */; };
 		C3938EF62840DDE600D20D97 /* UIStackView+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EF52840DDE600D20D97 /* UIStackView+Sugar.swift */; };
+		C3938EF828410CFB00D20D97 /* LocationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3938EF728410CFB00D20D97 /* LocationsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -101,6 +102,7 @@
 		C3938EF1283E89D900D20D97 /* LocationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewModel.swift; sourceTree = "<group>"; };
 		C3938EF3283E951400D20D97 /* LocationsTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableDelegate.swift; sourceTree = "<group>"; };
 		C3938EF52840DDE600D20D97 /* UIStackView+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Sugar.swift"; sourceTree = "<group>"; };
+		C3938EF728410CFB00D20D97 /* LocationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				C3938EAA2837F66200D20D97 /* LocationsInteractor.swift */,
 				C3938EAE2837F68A00D20D97 /* LocationsPresenter.swift */,
 				C3938E822837E30800D20D97 /* LocationsViewController.swift */,
+				C3938EF728410CFB00D20D97 /* LocationsRouter.swift */,
 				C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */,
 				C3938EF3283E951400D20D97 /* LocationsTableDelegate.swift */,
 				C3938EC62839335900D20D97 /* View */,
@@ -395,6 +398,7 @@
 				C3938EBD2839127600D20D97 /* LocationsService.swift in Sources */,
 				C3938ECE28394B8500D20D97 /* UIView+Sugar.swift in Sources */,
 				C3938ED2283A463600D20D97 /* LocationsTableViewCell.swift in Sources */,
+				C3938EF828410CFB00D20D97 /* LocationsRouter.swift in Sources */,
 				C3938EC82839336400D20D97 /* LocationsView.swift in Sources */,
 				C3938EDA283CE97A00D20D97 /* LocationsPreferencesView.swift in Sources */,
 				C3938EDD283E754A00D20D97 /* LocationDetailsBuilder.swift in Sources */,

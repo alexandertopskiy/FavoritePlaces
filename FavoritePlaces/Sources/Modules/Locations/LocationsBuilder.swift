@@ -19,11 +19,14 @@ final class LocationsBuilder: ModuleBuilder {
         }
         let presenter = LocationsPresenter()
         let interactor = LocationsInteractor(presenter: presenter)
+        let router = LocationsRouter()
         let controller = LocationsViewController(
             title: title,
             interactor: interactor,
+            router: router,
             initialState: .loadingAll
         )
+        router.viewController = controller
         presenter.viewController = controller
         return controller
     }

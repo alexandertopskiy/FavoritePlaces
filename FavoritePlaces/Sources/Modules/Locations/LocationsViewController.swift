@@ -15,6 +15,7 @@ protocol LocationsViewControllerDelegate: AnyObject {
 
 final class LocationsViewController: UIViewController {
     let interactor: LocationBusinessLogic
+    let router: LocationNavigationLogic
     var state: Locations.ViewControllerState
     var tableDataSource: LocationsTableDataSource = .init()
     var tableDelegate: LocationsTableDelegate = .init()
@@ -23,8 +24,12 @@ final class LocationsViewController: UIViewController {
 
     // MARK: -  Lifecycle
 
-    init(title: String, interactor: LocationBusinessLogic, initialState: Locations.ViewControllerState = .loadingAll) {
+    init(title: String,
+         interactor: LocationBusinessLogic,
+         router: LocationNavigationLogic,
+         initialState: Locations.ViewControllerState = .loadingAll) {
         self.interactor = interactor
+        self.router = router
         self.state = initialState
         super.init(nibName: nil, bundle: nil)
         tableDelegate.delegate = self
@@ -96,8 +101,7 @@ extension LocationsViewController: LocationsErrorViewDelegate {
 
 extension LocationsViewController: LocationsViewControllerDelegate {
     func openLocationDetails(_ locationId: UniqueIdentifier) {
-        let detailsController = LocationDetailsBuilder().set(initialState: .initial(id: locationId)).build()
-        navigationController?.pushViewController(detailsController, animated: true)
+        router.pushLocationDetailsModule(withId: locationId)
     }
 }
 
