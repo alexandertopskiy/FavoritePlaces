@@ -59,16 +59,14 @@ extension LocationDetailsViewController: LocationDetailsDisplayLogic {
     func display(newState: LocationDetails.ViewControllerState) {
         switch newState {
         case .loading:
-            print("loading...")
             customView?.showLoading()
         case let .result(model):
-            print("result: \(model)")
-            navigationItem.largeTitleDisplayMode = .never
             title = model.name
+            customView?.showView()
+            customView?.configure(with: model)
         case let .error(message: errorMessage):
             print("error, message: \(errorMessage)")
         case .initial(id: let id):
-            print("initial state: \(id)")
             customView?.showLoading()
             fetchDetailsForItem(withId: id)
         }
