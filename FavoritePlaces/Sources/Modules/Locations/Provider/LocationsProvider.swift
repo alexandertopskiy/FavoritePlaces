@@ -11,6 +11,13 @@ protocol LocationsProviderProtocol {
 
 enum LocationsProviderError: Error {
     case getItemsFailed(withError: Error)
+
+    var associatedValue: Error {
+        switch self {
+        case .getItemsFailed(let withError):
+            return withError
+        }
+    }
 }
 
 struct LocationsProvider {

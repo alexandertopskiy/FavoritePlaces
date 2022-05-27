@@ -47,11 +47,18 @@ final class LocationsService {
 
 extension LocationsService: LocationsServiceProtocol {
     func fetchItems(completion: @escaping ([LocationModel]?, Error?) -> Void) {
-        if let data = readLocalJSONFile(forName: "landmarkData") {
-            let models = parseSuccessData(data: data)
-            completion(models, nil)
-        } else {
+        guard let data = readLocalJSONFile(forName: "landmarkData") else {
             completion(nil, Locations.ShowItems.Response.Error.fetchError)
+            return
+        }
+        guard let models = parseSuccessData(data: data) else {
+            completion(nil, Locations.ShowItems.Response.Error.parsingError)
+            return
+        }
+        if models.isEmpty {
+            completion(nil, Locations.ShowItems.Response.Error.notFound)
+        } else {
+            completion(models, nil)
         }
     }
 }
