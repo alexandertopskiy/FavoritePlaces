@@ -3,8 +3,8 @@
 //  Copyright © 2022 Alexander Loshakov. All rights reserved.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 final class LocationsTableViewCell: UITableViewCell {
     struct Appearance {
