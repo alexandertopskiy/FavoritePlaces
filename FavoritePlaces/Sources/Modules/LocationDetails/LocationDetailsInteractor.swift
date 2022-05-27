@@ -23,7 +23,7 @@ final class LocationDetailsInteractor {
 
 extension LocationDetailsInteractor: LocationDetailsBusinessLogic {
     func fetchItemDetails(request: LocationDetails.ShowItem.Request) {
-        provider.getItem(withId: request.uuid) { (item, error) in
+        provider.getItem(withId: request.uid) { (item, error) in
             let result: Result<LocationModel>
             if let item = item {
                 result = .success(item)

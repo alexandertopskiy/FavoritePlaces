@@ -8,7 +8,7 @@ import Foundation
 enum LocationDetails {
     enum ShowItem {
         struct Request {
-            let uuid: UniqueIdentifier
+            let uid: UniqueIdentifier
         }
 
         struct Response {

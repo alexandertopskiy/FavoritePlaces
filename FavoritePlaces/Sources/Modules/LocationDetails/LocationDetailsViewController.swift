@@ -44,7 +44,7 @@ final class LocationDetailsViewController: UIViewController {
     // MARK: -  Private
 
     private func fetchDetailsForItem(withId uuid: UniqueIdentifier) {
-        let request = LocationDetails.ShowItem.Request(uuid: uuid)
+        let request = LocationDetails.ShowItem.Request(uid: uuid)
         interactor.fetchItemDetails(request: request)
     }
 }

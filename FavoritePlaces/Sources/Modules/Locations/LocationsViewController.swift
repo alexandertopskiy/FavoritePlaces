@@ -71,23 +71,16 @@ extension LocationsViewController: LocationsDisplayLogic {
         state = newState
         switch state {
         case .loadingAll:
-            print("loading all")
             customView?.showLoading()
             fetchItems(isFavoriteOnly: false)
         case .loadingFavorites:
-            print("loading Favorites")
             customView?.showLoading()
             fetchItems(isFavoriteOnly: true)
         case let .result(items):
-            print("result: \(items.count) items")
             tableDelegate.representableViewModels = items
             tableDataSource.representableViewModels = items
             customView?.updateTableViewData(delegate: tableDelegate, dataSource: tableDataSource)
-        case let .emptyResult(title, subtitle):
-            print("emptyResult")
-            customView?.showEmptyView(title: title, subtitle: subtitle)
         case let .error(message):
-            print("error: \(message)")
             customView?.showError(message: message)
         }
     }

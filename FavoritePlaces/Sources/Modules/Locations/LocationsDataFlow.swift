@@ -44,7 +44,6 @@ enum Locations {
         case loadingAll
         case loadingFavorites
         case result([LocationViewModel])
-        case emptyResult(title: String, subtitle: String)
         case error(message: String)
     }
 }

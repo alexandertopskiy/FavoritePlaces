@@ -19,7 +19,6 @@ final class LocationsView: UIView {
     // MARK: -  Subviews
 
     private var tableView: UITableView
-    private lazy var emptyView: LocationsEmptyView = .init()
 
     private lazy var headerView: LocationsPreferencesView = {
         let view = LocationsPreferencesView()
@@ -61,12 +60,11 @@ final class LocationsView: UIView {
         addSubviews(
             headerView,
             tableView,
-            emptyView,
             errorView,
             spinner
         )
         configureLayout()
-        [tableView, emptyView, errorView, spinner].forEach { $0.isHidden = true }
+        [tableView, errorView, spinner].forEach { $0.isHidden = true }
     }
 
     required init?(coder: NSCoder) {
@@ -88,7 +86,7 @@ final class LocationsView: UIView {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(safeAreaLayoutGuide)
         }
-        [tableView, emptyView, errorView].forEach {
+        [tableView, errorView].forEach {
             $0.snp.makeConstraints { make in
                 make.top.equalTo(headerView.snp.bottom)
                 make.trailing.leading.bottom.equalToSuperview()
@@ -97,12 +95,6 @@ final class LocationsView: UIView {
     }
 
     // MARK: -  States
-
-    func showEmptyView(title: String, subtitle: String) {
-        show(view: emptyView)
-        emptyView.title.text = title
-        emptyView.subtitle.text = subtitle
-    }
 
     func showLoading() {
         show(view: spinner)
