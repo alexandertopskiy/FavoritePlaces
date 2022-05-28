@@ -14,9 +14,9 @@
 - верстка через код с использованием SnapKit (​https://github.com/SnapKit/SnapKit)
 - архитектура проекта: модифицированный VIPER (https://github.com/alfa-laboratory/YARCH)
 
-P.S. 
+P.S.  
 На данный момент (18.05.22) аккаунт https://github.com/alfa-laboratory/ заблокирован;  
-Актуальный форк: https://github.com/aeternas/YARCH-Examples
+Актуальный форк с примером использования YARCH: https://github.com/aeternas/YARCH-Examples
 
 ____
 
@@ -25,12 +25,10 @@ ____
 - Отображать системную иконку “star.fill“, если место - избранное (isFavorite - флаг в модели); 
 - По переключению свитча фильтровать список на только избранных
 
-![All locations](Assets/main-all.png)
-![Favorites locations](Assets/main-favorites.png)
+![Main Screen](Assets/main-screen.png)
 
 ### Второй экран:
 - Детальное отображение места с картой, отображающей геопозицию из модели;
 - По кнопке назад можно вернуть к списку
 
-![Location details](Assets/details.png)
-![Location details (long park name)](Assets/details-2.png)
+![Location Details](Assets/details-screen.png)
