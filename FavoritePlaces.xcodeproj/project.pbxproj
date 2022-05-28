@@ -201,8 +201,6 @@
 				C3938EAE2837F68A00D20D97 /* LocationsPresenter.swift */,
 				C3938E822837E30800D20D97 /* LocationsViewController.swift */,
 				C3938EF728410CFB00D20D97 /* LocationsRouter.swift */,
-				C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */,
-				C3938EF3283E951400D20D97 /* LocationsTableDelegate.swift */,
 				C3938EC62839335900D20D97 /* View */,
 				C3938EBB2839125B00D20D97 /* Provider */,
 				C3938EB22838168000D20D97 /* Model */,
@@ -232,9 +230,9 @@
 		C3938EC62839335900D20D97 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C3938EF9284116CF00D20D97 /* LocationsTable */,
 				C3938EC72839336300D20D97 /* LocationsView.swift */,
 				C3938EC928393E4200D20D97 /* LocationsErrorView.swift */,
-				C3938ED1283A463600D20D97 /* LocationsTableViewCell.swift */,
 				C3938ED9283CE97A00D20D97 /* LocationsPreferencesView.swift */,
 			);
 			path = View;
@@ -297,6 +295,16 @@
 				C3938EF1283E89D900D20D97 /* LocationDetailsViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C3938EF9284116CF00D20D97 /* LocationsTable */ = {
+			isa = PBXGroup;
+			children = (
+				C3938ED3283A487900D20D97 /* LocationsTableDataSource.swift */,
+				C3938EF3283E951400D20D97 /* LocationsTableDelegate.swift */,
+				C3938ED1283A463600D20D97 /* LocationsTableViewCell.swift */,
+			);
+			path = LocationsTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

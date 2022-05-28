@@ -31,7 +31,7 @@ final class LocationsErrorView: UIView {
 
     // MARK: -  Subviews
 
-    lazy var title: UILabel = {
+    private lazy var title: UILabel = {
         let label = UILabel()
         label.textColor = appearance.titleColor
         label.textAlignment = .center
@@ -73,6 +73,12 @@ final class LocationsErrorView: UIView {
             make.centerX.equalTo(title.snp.centerX)
             make.top.equalTo(title.snp.bottom).offset(appearance.refreshButtonInsets.top)
         }
+    }
+
+    // MARK: -  Configuration
+
+    func configure(withMessage errorMessage: String) {
+        title.text = errorMessage
     }
 
     // MARK: -  Actions

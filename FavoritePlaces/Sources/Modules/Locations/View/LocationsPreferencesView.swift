@@ -26,7 +26,7 @@ final class LocationsPreferencesView: UIView {
 
     // MARK: -  Subviews
 
-    lazy var title: UILabel = {
+    private lazy var title: UILabel = {
         let label = UILabel()
         label.text = "Favorites only"
         label.textColor = .black
@@ -35,7 +35,7 @@ final class LocationsPreferencesView: UIView {
         return label
     }()
 
-    lazy var favoritesOnlySwitch: UISwitch = {
+    private lazy var favoritesOnlySwitch: UISwitch = {
         let favoritesOnlySwitch = UISwitch()
         favoritesOnlySwitch.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
         return favoritesOnlySwitch
@@ -58,6 +58,7 @@ final class LocationsPreferencesView: UIView {
     init(appearance: Appearance = Appearance()) {
         self.appearance = appearance
         super.init(frame: .zero)
+
         addSubviews(
             topSeparator,
             title,

@@ -94,6 +94,14 @@ final class LocationsView: UIView {
         }
     }
 
+    // MARK: -  Private
+
+    private func show(view: UIView) {
+        subviews.forEach {
+            $0.isHidden = (view != $0 && $0 != headerView)
+        }
+    }
+
     // MARK: -  States
 
     func showLoading() {
@@ -102,17 +110,11 @@ final class LocationsView: UIView {
 
     func showError(message: String) {
         show(view: errorView)
-        errorView.title.text = message
+        errorView.configure(withMessage: message)
     }
 
     func showTable() {
         show(view: tableView)
-    }
-
-    private func show(view: UIView) {
-        subviews.forEach {
-            $0.isHidden = (view != $0 && $0 != headerView)
-        }
     }
 
     func updateTableViewData(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {

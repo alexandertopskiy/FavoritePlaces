@@ -160,7 +160,7 @@ final class LocationDetailsView: UIView {
         }
     }
 
-    // MARK: -  Configuratation
+    // MARK: -  Configuration
 
     func configure(with viewModel: LocationDetailsViewModel) {
         mapView.setRegion(

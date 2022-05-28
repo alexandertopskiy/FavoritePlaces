@@ -17,6 +17,7 @@ final class LocationsViewController: UIViewController {
     let interactor: LocationBusinessLogic
     let router: LocationNavigationLogic
     var state: Locations.ViewControllerState
+
     var tableDataSource: LocationsTableDataSource = .init()
     var tableDelegate: LocationsTableDelegate = .init()
 
