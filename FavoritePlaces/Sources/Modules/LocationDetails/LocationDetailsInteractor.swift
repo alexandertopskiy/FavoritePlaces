@@ -19,7 +19,7 @@ final class LocationDetailsInteractor {
     }
 }
 
-// MARK: -  LocationBusinessLogic
+// MARK: -  LocationDetailsBusinessLogic
 
 extension LocationDetailsInteractor: LocationDetailsBusinessLogic {
     func fetchItemDetails(request: LocationDetails.ShowItem.Request) {

@@ -8,6 +8,8 @@ import UIKit
 
 final class LocationsTableViewCell: UITableViewCell {
     struct Appearance {
+        let backgroundColor: UIColor =      .white
+
         let iconImageSide: CGFloat = 50
         let iconImageInsets: UIEdgeInsets = .init(top: 5, left: 12, bottom: 5, right: 10)
 
@@ -66,7 +68,7 @@ final class LocationsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        backgroundColor = .white
+        backgroundColor = appearance.backgroundColor
         contentView.addSubviews(
             iconImageView,
             title,

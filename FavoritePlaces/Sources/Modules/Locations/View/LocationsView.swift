@@ -8,17 +8,18 @@ import UIKit
 
 final class LocationsView: UIView {
     struct Appearance {
-        let spinnerColor: UIColor = .black
+        let spinnerColor: UIColor =         .black
+        let backgroundColor: UIColor =      .white
+        let tableBackgroundColor: UIColor = .white
     }
 
     var appearance = Appearance()
 
-    weak var refreshActionsDelegate: LocationsErrorViewDelegate?
     weak var switchActionsDelegate: LocationsPreferencesViewDelegate?
 
     // MARK: -  Subviews
 
-    private var tableView: UITableView
+    private var tableView: UITableView = .init()
 
     private lazy var headerView: LocationsPreferencesView = {
         let view = LocationsPreferencesView()
@@ -26,11 +27,7 @@ final class LocationsView: UIView {
         return view
     }()
 
-    private lazy var errorView: LocationsErrorView = {
-        let view = LocationsErrorView()
-        view.delegate = refreshActionsDelegate
-        return view
-    }()
+    private lazy var errorView: LocationsErrorView = .init()
 
     private lazy var spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .medium)
@@ -42,20 +39,13 @@ final class LocationsView: UIView {
 
     // MARK: -  Lifecycle
 
-    init(
-        frame: CGRect,
-        tableDataSouce: UITableViewDataSource,
-        refreshDelegate: LocationsErrorViewDelegate,
-        switchDelegate: LocationsPreferencesViewDelegate,
-        appearance: Appearance = .init()
-    ) {
-        tableView = .init()
+    init(frame: CGRect,
+         switchDelegate: LocationsPreferencesViewDelegate,
+         appearance: Appearance = .init()) {
         super.init(frame: frame)
-        tableView.dataSource = tableDataSouce
-        refreshActionsDelegate = refreshDelegate
-        switchActionsDelegate = switchDelegate
 
-        backgroundColor = .white
+        switchActionsDelegate = switchDelegate
+        backgroundColor = appearance.backgroundColor
         configureTableView()
         addSubviews(
             headerView,
@@ -72,7 +62,7 @@ final class LocationsView: UIView {
     }
 
     private func configureTableView() {
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = appearance.tableBackgroundColor
         tableView.separatorStyle = .none
         tableView.sectionFooterHeight = UITableView.automaticDimension
         tableView.sectionHeaderHeight = UITableView.automaticDimension

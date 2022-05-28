@@ -9,11 +9,14 @@ import UIKit
 
 final class LocationDetailsView: UIView {
     struct Appearance {
+        let backgroundColor: UIColor =              .white
+
         let mapViewHeight: CGFloat = UIScreen.main.bounds.height * 5 / 13
         let mapScale: CGFloat = 2500
 
         let iconImageSide: CGFloat = 200
         let iconBorderWidth: CGFloat = 5.0
+        let iconBorderColor: UIColor =              .white
 
         let labelsHorizontalInset: CGFloat = 20
         let nameLabelTopOffset: CGFloat = 30
@@ -53,7 +56,7 @@ final class LocationDetailsView: UIView {
     private lazy var iconImageView: UIImageView = {
         let view = UIImageView()
         view.setRadius(radius: appearance.iconImageSide / 2)
-        view.layer.borderColor = UIColor.white.cgColor
+        view.layer.borderColor = appearance.iconBorderColor.cgColor
         view.layer.borderWidth = appearance.iconBorderWidth
         return view
     }()
@@ -105,7 +108,7 @@ final class LocationDetailsView: UIView {
     init(frame: CGRect, appearance: Appearance = .init()) {
         super.init(frame: frame)
 
-        backgroundColor = .white
+        backgroundColor = appearance.backgroundColor
         iconImageBGView.addSubview(iconImageView)
         let views = [
             spinner,

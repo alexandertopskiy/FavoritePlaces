@@ -44,8 +44,6 @@ final class LocationsViewController: UIViewController {
     override func loadView() {
         let view = LocationsView(
             frame: UIScreen.main.bounds,
-            tableDataSouce: tableDataSource,
-            refreshDelegate: self,
             switchDelegate: self
         )
         self.view = view
@@ -92,13 +90,7 @@ extension LocationsViewController: LocationsDisplayLogic {
     }
 }
 
-// MARK: -  LocationsErrorViewDelegate
-
-extension LocationsViewController: LocationsErrorViewDelegate {
-    func reloadButtonWasTapped() {
-        display(newState: .loadingAll)
-    }
-}
+// MARK: -  LocationsViewControllerDelegate
 
 extension LocationsViewController: LocationsViewControllerDelegate {
     func openLocationDetails(_ locationId: UniqueIdentifier) {

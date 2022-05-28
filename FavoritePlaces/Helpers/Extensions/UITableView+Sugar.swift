@@ -6,23 +6,8 @@
 import UIKit.UITableView
 
 extension UITableView {
-
     static func defaultReuseId(for elementType: UIView.Type) -> String {
         return String(describing: elementType)
-    }
-
-    convenience init(
-        delegate: UITableViewDelegate,
-        dataSource: UITableViewDataSource,
-        backgroundColor: UIColor = UIColor.white,
-        estimatedRowHeight: CGFloat = 80
-    ) {
-        self.init()
-        self.delegate = delegate
-        self.dataSource = dataSource
-        self.backgroundColor = backgroundColor
-        self.estimatedRowHeight = estimatedRowHeight
-        self.rowHeight = UITableView.automaticDimension
     }
 
     func dequeueReusableCellWithRegistration<T: UITableViewCell>(type: T.Type, indexPath: IndexPath, reuseId: String? = nil) -> T {

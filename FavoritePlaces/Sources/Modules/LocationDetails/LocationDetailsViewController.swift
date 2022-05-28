@@ -49,7 +49,7 @@ final class LocationDetailsViewController: UIViewController {
     }
 }
 
-// MARK: -  LocationsDisplayLogic
+// MARK: -  LocationDetailsDisplayLogic
 
 extension LocationDetailsViewController: LocationDetailsDisplayLogic {
     func displayItem(viewModel: LocationDetails.ShowItem.ViewModel) {
