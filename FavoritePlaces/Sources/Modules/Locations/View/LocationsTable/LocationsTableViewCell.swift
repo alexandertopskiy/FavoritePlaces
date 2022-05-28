@@ -11,7 +11,7 @@ final class LocationsTableViewCell: UITableViewCell {
         let backgroundColor: UIColor =      .white
 
         let iconImageSide: CGFloat = 50
-        let iconImageInsets: UIEdgeInsets = .init(top: 5, left: 12, bottom: 5, right: 10)
+        let iconImageInsets: UIEdgeInsets = .init(top: 5, left: 16, bottom: 5, right: 10)
 
         let labelTextColor: UIColor =       .black
         let labelInsets: UIEdgeInsets =     .init(top: 25, left: 10, bottom: 25, right: 5)

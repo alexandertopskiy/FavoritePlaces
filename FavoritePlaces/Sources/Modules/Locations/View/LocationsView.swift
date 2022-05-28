@@ -19,7 +19,11 @@ final class LocationsView: UIView {
 
     // MARK: -  Subviews
 
-    private var tableView: UITableView = .init()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
+    }()
 
     private lazy var headerView: LocationsPreferencesView = {
         let view = LocationsPreferencesView()

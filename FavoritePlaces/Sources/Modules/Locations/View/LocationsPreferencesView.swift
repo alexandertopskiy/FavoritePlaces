@@ -12,12 +12,11 @@ protocol LocationsPreferencesViewDelegate: AnyObject {
 final class LocationsPreferencesView: UIView {
     struct Appearance {
         let labelFontSize: CGFloat = 15
-        let labelInsets: UIEdgeInsets = .init(top: 15, left: 12, bottom: 15, right: 12)
+        let labelInsets: UIEdgeInsets = .init(top: 15, left: 16, bottom: 15, right: 12)
 
-        let switchInset: CGFloat = 20
+        let switchTrailingInset: CGFloat = 20
 
         let separatorHeight: CGFloat = 1
-        let separatorOffset: CGFloat = 12
         let separatorColor: UIColor = .init(red: 11/255, green: 31/255, blue: 53/255, alpha: 0.05)
     }
 
@@ -75,7 +74,7 @@ final class LocationsPreferencesView: UIView {
     func configureLayout() {
         topSeparator.snp.makeConstraints { make in
             make.trailing.top.equalToSuperview()
-            make.leading.equalToSuperview().offset(appearance.separatorOffset)
+            make.leading.equalTo(title)
             make.height.equalTo(appearance.separatorHeight)
         }
         title.snp.makeConstraints { make in
@@ -83,12 +82,12 @@ final class LocationsPreferencesView: UIView {
             make.leading.equalToSuperview().inset(appearance.labelInsets.left)
         }
         favoritesOnlySwitch.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(appearance.switchInset)
+            make.trailing.equalToSuperview().inset(appearance.switchTrailingInset)
             make.centerY.equalToSuperview()
         }
         bottomSeparator.snp.makeConstraints { make in
             make.trailing.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(appearance.separatorOffset)
+            make.leading.equalTo(title)
             make.height.equalTo(appearance.separatorHeight)
         }
     }
